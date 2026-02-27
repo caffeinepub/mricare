@@ -1,0 +1,100 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Fix deployment error by removing Next.js dependencies",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "summary": "Audit and fix all compilation and build errors preventing successful deployment by replacing Next.js-specific constructs with standard React equivalents",
+      "acceptanceCriteria": [
+        "The Motoko backend actor compiles without errors",
+        "The frontend builds without TypeScript or module resolution errors",
+        "No Next.js-specific imports or APIs are used anywhere in the frontend",
+        "The application deploys successfully to the Internet Computer network",
+        "All existing features (announcement bar, navbar, hero, procedures, dentistry, partners, services, doctors, consultation form, footer) remain fully functional after the fix"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Replace any Next.js Image component imports with standard img tags. Replace Next.js font imports with standard CSS font-face declarations or Google Fonts link in index.html. Ensure all generated image assets use correct paths: frontend/public/assets/generated/<filename>.dim_WIDTHxHEIGHT.png. Verify all sections (announcement bar, navbar, hero with generated/hero-dentist.dim_800x900.png, procedures, dentistry, partners, services with generated images, doctors with generated/doctor-*.dim_400x480.png, consultation form with generated/consultation-doctor.dim_600x700.png, footer) render correctly with standard React and img tags."
+        },
+        {
+          "path": "frontend/src/components/AnnouncementBar.tsx",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific imports (next/link, next/image, next/font). Replace Next.js Link component with standard anchor tags or React Router Link if routing is needed. Ensure the component uses only React, TypeScript, and Tailwind CSS."
+        },
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific imports (next/link, next/image, next/font). Replace Next.js Link component with standard anchor tags with hash navigation for single-page scrolling (e.g., href='#services'). Replace Next.js Image component with standard img tags. Ensure mobile menu toggle and navigation work with standard React state and event handlers."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image component with standard img tag using src='assets/generated/hero-dentist.dim_800x900.png'. Ensure the hero section displays correctly with Tailwind CSS styling and standard React."
+        },
+        {
+          "path": "frontend/src/components/Procedures.tsx",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image components with standard img tags for procedure icons/images. Ensure all procedure cards render correctly with Tailwind CSS and standard React."
+        },
+        {
+          "path": "frontend/src/components/Dentistry.tsx",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image components with standard img tags using paths like assets/generated/dental-technology.dim_400x400.png and assets/generated/dentist-experienced.dim_400x400.png. Ensure the dentistry section displays correctly with standard React."
+        },
+        {
+          "path": "frontend/src/components/Partners.tsx",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image components with standard img tags for partner logos. Ensure the partners section renders correctly with Tailwind CSS and standard React."
+        },
+        {
+          "path": "frontend/src/components/Services.tsx",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image components with standard img tags using paths like assets/generated/gum-surgery.dim_300x300.png and assets/generated/tooth-extraction.dim_300x300.png. Ensure all service cards display correctly with standard React and Tailwind CSS."
+        },
+        {
+          "path": "frontend/src/components/Doctors.tsx",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image components with standard img tags using paths like assets/generated/doctor-1.dim_400x480.png, assets/generated/doctor-2.dim_400x480.png, assets/generated/doctor-3.dim_400x480.png, assets/generated/doctor-4.dim_400x480.png. Ensure the doctors section and all doctor cards render correctly with standard React."
+        },
+        {
+          "path": "frontend/src/components/ConsultationForm.tsx",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image component with standard img tag using src='assets/generated/consultation-doctor.dim_600x700.png'. Ensure form submission, validation, and all form controls work correctly with standard React state and event handlers. Maintain any backend integration for form submission."
+        },
+        {
+          "path": "frontend/src/components/Footer.tsx",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific imports (next/link, next/image, next/font). Replace Next.js Link components with standard anchor tags. Replace any Next.js Image components with standard img tags. Ensure the footer renders correctly with Tailwind CSS and standard React."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "If custom fonts were imported via Next.js font system, replace with standard CSS @font-face declarations or add Google Fonts link in index.html. Ensure all global styles remain intact and compatible with Tailwind CSS and standard React."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "If custom fonts are needed, add Google Fonts link tags in the head section to replace Next.js font imports. Ensure the HTML template correctly references the Vite entry point and includes all necessary meta tags for the Internet Computer deployment."
+        },
+        {
+          "path": "frontend/package.json",
+          "operation": "modify",
+          "description": "Remove any Next.js dependencies (next, next/image, next/font, etc.). Ensure all dependencies are compatible with Vite and the Internet Computer React stack. Verify build scripts reference Vite and not Next.js build commands."
+        },
+        {
+          "path": "frontend/tsconfig.json",
+          "operation": "modify",
+          "description": "Remove any Next.js-specific TypeScript configuration (paths for next/*, moduleResolution specific to Next.js). Ensure TypeScript configuration is compatible with Vite and standard React. Verify all path aliases and module resolution work correctly for the Internet Computer stack."
+        },
+        {
+          "path": "frontend/vite.config.ts",
+          "operation": "modify",
+          "description": "Ensure Vite configuration correctly handles asset paths for generated images in public/assets/generated/. Verify build output targets the correct directory for Internet Computer deployment. Ensure no Next.js-specific plugins or configurations remain."
+        }
+      ]
+    }
+  ]
+}

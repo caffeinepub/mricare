@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* Clinic design tokens */
+    --clinic-purple: oklch(0.55 0.22 295);
+    --clinic-purple-dark: oklch(0.45 0.22 295);
+    --clinic-purple-light: oklch(0.78 0.12 295);
+    --clinic-light: oklch(0.95 0.04 295);
+    --clinic-bg-start: oklch(0.98 0.02 295);
+    --clinic-bg-end: oklch(0.94 0.04 295);
+    --clinic-dark: oklch(0.18 0.01 260);
+    --clinic-gray: oklch(0.52 0.01 260);
+    --clinic-border: oklch(0.90 0.02 295);
+
+    /* Card pastel backgrounds */
+    --clinic-card-1: oklch(0.96 0.04 295);
+    --clinic-card-2: oklch(0.96 0.04 160);
+    --clinic-card-3: oklch(0.96 0.04 60);
+
+    /* Shadcn tokens */
+    --background: 0.98 0.02 295;
+    --foreground: 0.18 0.01 260;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.01 260;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.01 260;
+    --primary: 0.55 0.22 295;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.95 0.04 295;
+    --secondary-foreground: 0.18 0.01 260;
+    --muted: 0.95 0.04 295;
+    --muted-foreground: 0.52 0.01 260;
+    --accent: 0.95 0.04 295;
+    --accent-foreground: 0.18 0.01 260;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.90 0.02 295;
+    --input: 0.90 0.02 295;
+    --ring: 0.55 0.22 295;
+    --chart-1: 0.55 0.22 295;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.18 0.01 260;
+    --sidebar-primary: 0.55 0.22 295;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.95 0.04 295;
+    --sidebar-accent-foreground: 0.18 0.01 260;
+    --sidebar-border: 0.90 0.02 295;
+    --sidebar-ring: 0.55 0.22 295;
+  }
+
+  .dark {
+    --background: 0.145 0 0;
+    --foreground: 0.985 0 0;
+    --card: 0.205 0 0;
+    --card-foreground: 0.985 0 0;
+    --popover: 0.269 0 0;
+    --popover-foreground: 0.985 0 0;
+    --primary: 0.78 0.12 295;
+    --primary-foreground: 0.18 0.01 260;
+    --secondary: 0.269 0 0;
+    --secondary-foreground: 0.985 0 0;
+    --muted: 0.269 0 0;
+    --muted-foreground: 0.708 0 0;
+    --accent: 0.371 0 0;
+    --accent-foreground: 0.985 0 0;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.205 0 0;
+    --border: 1 0 0 / 10%;
+    --input: 1 0 0 / 15%;
+    --ring: 0.78 0.12 295;
+    --sidebar: 0.205 0 0;
+    --sidebar-foreground: 0.985 0 0;
+    --sidebar-primary: 0.78 0.12 295;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.269 0 0;
+    --sidebar-accent-foreground: 0.985 0 0;
+    --sidebar-border: 1 0 0 / 10%;
+    --sidebar-ring: 0.78 0.12 295;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 3s ease-in-out 1.5s infinite;
+  }
+
+  .animate-scroll-x {
+    animation: scroll-x 30s linear infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes scroll-x {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Premium dental clinic website (MriCare+) built with Next.js 15 (App Router), TypeScript, Tailwind CSS, Framer Motion, Lucide React, and React Hook Form. Soft purple healthcare theme with full landing page including announcement bar, sticky navbar, hero section, dental procedures, modern dentistry, partner logos, healthcare services grid, doctors section, consultation form, and footer.",
+  "architectural_notes": [
+    "Next.js 15 App Router with TypeScript; components in /app/components/",
+    "Tailwind CSS with custom purple design system (#8B5CF6 primary, #EDE9FE light, gradient background)",
+    "Framer Motion for scroll fade-in, hover scale, card lift, floating hero elements, and counter animations",
+    "React Hook Form with validation and success message for consultation form",
+    "Use Next.js Image component for all images with lazy loading and proper alt tags",
+    "SEO: metadata, OpenGraph tags, semantic HTML, ARIA labels throughout"
+  ],
+  "known_issues": [],
+  "isFixRequest": true,
+  "existing_features": [
+    {
+      "id": "feature-implement-a-sticky-top-announcement-bar-with-a-thin-purple-8b5cf6-background-displaying-the-text-available-for-free-dental-consultation-on-the-left-and-a-small-cta-link-on-the-right-it-must-remain-fixed-at-the-top-of-the-viewport-and-be-fully-responsive",
+      "title": "Implement a sticky top announcement bar with a thin purple (#8B5CF6) background, displaying the text 'Available for Free Dental Consultation' on the left and a small CTA link on the right. It must remain fixed at the top of the viewport and be fully responsive.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-sticky-navbar-below-the-announcement-bar-left-side-logo-text-mricare-center-navigation-links-home-consultation-our-mission-solutions-projects-right-a-search-icon-and-a-purple-rounded-get-started-button-on-scroll-a-shadow-should-appear-on-mobile-collapse-the-center-links-into-a-hamburger-menu-with-smooth-open-close-transitions",
+      "title": "Implement a sticky navbar below the announcement bar. Left side: logo text 'MriCare+'. Center: navigation links (Home, Consultation, Our Mission, Solutions, Projects). Right: a search icon and a purple rounded 'Get Started' button. On scroll, a shadow should appear. On mobile, collapse the center links into a hamburger menu with smooth open/close transitions.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-hero-section-with-a-two-column-grid-layout-left-column-a-small-purple-badge-heading-advanced-your-smile-our-every-day-mission-a-short-descriptive-paragraph-a-solid-black-book-an-appointment-button-and-an-outline-style-learn-more-button-below-the-buttons-a-stats-row-showing-24-7-emergency-support-100-specialized-doctors-and-200-advanced-medical-facilities-right-column-a-large-rounded-hero-image-dentist-with-patient-a-floating-circular-ui-element-and-a-soft-overlay-gradient-include-fade-in-on-load-image-scale-animation-floating-element-slow-rotation-and-counter-animation-for-stats",
+      "title": "Build a hero section with a two-column grid layout. Left column: a small purple badge, heading 'Advanced Your Smile Our Every Day Mission', a short descriptive paragraph, a solid black 'Book an Appointment' button, and an outline-style 'Learn More' button. Below the buttons, a stats row showing '24/7 Emergency Support', '100+ Specialized Doctors', and '200+ Advanced Medical Facilities'. Right column: a large rounded hero image (dentist with patient), a floating circular UI element, and a soft overlay gradient. Include fade-in on load, image scale animation, floating element slow rotation, and counter animation for stats.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-dental-procedures-section-with-a-centered-heading-our-advanced-surgical-dental-procedures-and-a-subtext-paragraph-display-three-cards-side-by-side-card-1-gum-surgery-from-60-circular-image-add-to-cart-button-card-2-get-consultation-doctor-image-explore-button-card-3-tooth-extraction-from-40-add-to-cart-button-cards-must-have-pastel-background-colors-rounded-corners-rounded-2xl-or-rounded-3xl-and-a-hover-lift-effect-with-smooth-transitions",
+      "title": "Build a dental procedures section with a centered heading 'Our Advanced Surgical Dental Procedures' and a subtext paragraph. Display three cards side by side: Card 1 (Gum Surgery, From $60, circular image, Add to Cart button), Card 2 (Get Consultation, doctor image, Explore button), Card 3 (Tooth Extraction, From $40, Add to Cart button). Cards must have pastel background colors, rounded corners (rounded-2xl or rounded-3xl), and a hover lift effect with smooth transitions.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-modern-dentistry-with-a-gentle-touch-section-where-the-word-gentle-is-highlighted-in-purple-show-two-large-feature-cards-experienced-dentists-with-a-circular-dental-image-and-description-modern-technology-with-a-circular-image-and-description-below-those-three-smaller-feature-cards-personalized-patient-centered-care-flexible-hours-for-you-and-why-trust-medicare",
+      "title": "Build a 'Modern Dentistry with a Gentle Touch' section where the word 'Gentle' is highlighted in purple. Show two large feature cards (Experienced Dentists with a circular dental image and description, Modern Technology with a circular image and description). Below those, three smaller feature cards: 'Personalized & Patient-Centered Care', 'Flexible Hours for You', and 'Why Trust MediCare?'.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-partner-logos-section-with-a-light-purple-ede9fe-background-display-a-horizontal-strip-of-partner-brand-logos-in-grayscale-the-strip-should-be-responsive-and-optionally-function-as-a-scrolling-slider",
+      "title": "Build a partner logos section with a light purple (#EDE9FE) background. Display a horizontal strip of partner/brand logos in grayscale. The strip should be responsive and optionally function as a scrolling slider.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-healthcare-services-grid-section-with-the-heading-comprehensive-healthcare-services-for-every-need-display-6-service-cards-general-checkups-specialist-consultations-emergency-care-surgical-procedures-diagnostic-imaging-pediatrics-each-card-must-include-a-lucide-react-icon-a-title-and-a-short-description-with-a-hover-elevation-effect-the-grid-must-be-3-columns-on-desktop-2-on-tablet-and-1-on-mobile",
+      "title": "Build a healthcare services grid section with the heading 'Comprehensive Healthcare Services for Every Need'. Display 6 service cards (General Checkups, Specialist Consultations, Emergency Care, Surgical Procedures, Diagnostic Imaging, Pediatrics). Each card must include a Lucide React icon, a title, and a short description, with a hover elevation effect. The grid must be 3 columns on desktop, 2 on tablet, and 1 on mobile.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-doctors-section-with-the-heading-meet-our-expert-doctors-medical-specialists-display-4-doctor-cards-each-containing-a-doctor-image-name-specialization-star-rating-display-and-social-media-icons-on-hover-the-card-lifts-and-the-image-subtly-zooms-in",
+      "title": "Build a doctors section with the heading 'Meet Our Expert Doctors & Medical Specialists'. Display 4 doctor cards, each containing a doctor image, name, specialization, star rating display, and social media icons. On hover, the card lifts and the image subtly zooms in.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-book-consultation-section-with-a-soft-purple-gradient-background-and-a-split-layout-left-side-a-form-with-fields-for-name-email-phone-service-dropdown-and-message-plus-a-submit-button-right-side-a-doctor-image-the-form-must-include-client-side-validation-with-accessible-labels-and-display-a-success-message-on-successful-submission-store-submitted-consultation-requests-in-the-backend",
+      "title": "Build a book consultation section with a soft purple gradient background and a split layout. Left side: a form with fields for Name, Email, Phone, Service (dropdown), and Message, plus a Submit button. Right side: a doctor image. The form must include client-side validation with accessible labels and display a success message on successful submission. Store submitted consultation requests in the backend.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-footer-with-a-minimal-clean-layout-including-logo-text-mricare-with-a-short-description-navigation-links-contact-information-social-media-icons-and-a-copyright-line",
+      "title": "Build a footer with a minimal clean layout including: logo text 'MriCare+' with a short description, navigation links, contact information, social media icons, and a copyright line.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-consistent-design-system-throughout-the-entire-application-primary-purple-8b5cf6-light-purple-ede9fe-background-gradient-from-f5f3ff-to-ede9fe-dark-text-1f2937-secondary-text-6b7280-white-cards-ffffff-use-inter-or-poppins-font-use-rounded-2xl-or-rounded-3xl-corners-soft-shadow-shadow-lg-with-purple-200-40-opacity-smooth-hover-transitions-and-a-minimal-spacious-layout-implement-scroll-triggered-fade-in-animations-button-hover-scale-card-hover-lift-and-image-zoom-hover-effects-across-all-sections",
+      "title": "Apply a consistent design system throughout the entire application: primary purple #8B5CF6, light purple #EDE9FE, background gradient from #F5F3FF to #EDE9FE, dark text #1F2937, secondary text #6B7280, white cards #FFFFFF. Use Inter or Poppins font. Use rounded-2xl or rounded-3xl corners, soft shadow (shadow-lg with purple-200/40 opacity), smooth hover transitions, and a minimal spacious layout. Implement scroll-triggered fade-in animations, button hover scale, card hover lift, and image zoom hover effects across all sections.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-audit-and-fix-all-compilation-and-build-errors-preventing-successful-deployment-ensure-the-motoko-backend-actor-compiles-without-errors-and-the-react-typescript-frontend-builds-cleanly-replace-any-next-js-specific-constructs-app-router-next-image-next-font-etc-with-standard-react-equivalents-compatible-with-the-vite-based-internet-computer-stack",
+      "title": "Audit and fix all compilation and build errors preventing successful deployment. Ensure the Motoko backend actor compiles without errors and the React/TypeScript frontend builds cleanly. Replace any Next.js-specific constructs (App Router, next/image, next/font, etc.) with standard React equivalents compatible with the Vite-based Internet Computer stack.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Top announcement bar with free consultation text and CTA link",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Sticky navbar with logo (MriCare+), center nav links, search icon, and Get Started button with mobile hamburger menu",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Hero section with 2-column layout, badge, heading, two CTA buttons, stats row, hero image, floating element, and counter animations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Dental procedures section with 3 cards (Gum Surgery, Consultation, Tooth Extraction) with hover lift and pastel backgrounds",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Modern dentistry section with two large feature cards and three small feature cards below",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Partner logos horizontal strip with light purple background and grayscale logos",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Healthcare services grid with 6 cards (icons, titles, descriptions) responsive 3/2/1 column layout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Doctors section with 4 doctor cards (image, name, specialization, rating stars, social icons) and hover effects",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Book consultation section with split layout: validated form (name, email, phone, service, message) on left and doctor image on right",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Footer with logo, description, nav links, contact info, social icons, and copyright",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Create a Motoko backend with a single actor that stores consultation form submissions. Each submission should capture: name (Text), email (Text), phone (Text), service (Text), message (Text), and timestamp. Expose a function to add a new consultation and a function to retrieve all consultations.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "MriCare+",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

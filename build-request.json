@@ -1,0 +1,43 @@
+{
+  "kind": "build_request",
+  "title": "Fix deployment error",
+  "projectName": "MriCare+",
+  "priority": "high",
+  "requirements": [
+    {
+      "id": "REQ-13",
+      "text": "Audit and fix all compilation and build errors preventing successful deployment. Ensure the Motoko backend actor compiles without errors and the React/TypeScript frontend builds cleanly. Replace any Next.js-specific constructs (App Router, next/image, next/font, etc.) with standard React equivalents compatible with the Vite-based Internet Computer stack.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "fix it"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The Motoko backend actor compiles without errors",
+        "The frontend builds without TypeScript or module resolution errors",
+        "No Next.js-specific imports or APIs are used anywhere in the frontend",
+        "The application deploys successfully to the Internet Computer network",
+        "All existing features (announcement bar, navbar, hero, procedures, dentistry, partners, services, doctors, consultation form, footer) remain fully functional after the fix"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not remove or alter any existing feature functionality",
+    "All frontend code must use React with TypeScript and Tailwind CSS — no Next.js APIs",
+    "Backend must remain a single Motoko actor in backend/main.mo",
+    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui"
+  ],
+  "nonGoals": [
+    "Adding new features or sections beyond what already exists",
+    "Changing the visual design or color scheme",
+    "Migrating to a different frontend framework"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}
