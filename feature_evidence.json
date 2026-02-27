@@ -2,21 +2,11 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-audit-and-fix-all-compilation-and-build-errors-preventing-successful-deployment-ensure-the-motoko-backend-actor-compiles-without-errors-and-the-react-typescript-frontend-builds-cleanly-replace-any-next-js-specific-constructs-app-router-next-image-next-font-etc-with-standard-react-equivalents-compatible-with-the-vite-based-internet-computer-stack",
-      "featureTitle": "Audit and fix all compilation and build errors preventing successful deployment. Ensure the Motoko backend actor compiles without errors and the React/TypeScript frontend builds cleanly. Replace any Next.js-specific constructs (App Router, next/image, next/font, etc.) with standard React equivalents compatible with the Vite-based Internet Computer stack.",
+      "featureId": "feature-remove-all-unnecessary-continuous-looping-animations-throughout-the-site-specifically-stop-the-auto-scrolling-marquee-in-the-partners-section-remove-or-pause-the-infinite-horizontal-scroll-remove-any-floating-element-slow-rotation-or-perpetual-css-keyframe-animations-in-the-hero-section-and-eliminate-any-other-elements-that-animate-on-a-continuous-loop-without-user-interaction-keep-only-meaningful-animations-hover-effects-card-lift-image-zoom-button-scale-scroll-triggered-fade-in-on-section-entry-and-one-time-load-animations-such-as-the-stats-counter-after-changes-no-element-should-be-in-constant-motion-on-the-page-during-normal-browsing",
+      "featureTitle": "Remove all unnecessary continuous/looping animations throughout the site. Specifically: stop the auto-scrolling marquee in the Partners section (remove or pause the infinite horizontal scroll), remove any floating element slow rotation or perpetual CSS keyframe animations in the Hero section, and eliminate any other elements that animate on a continuous loop without user interaction. Keep only meaningful animations: hover effects (card lift, image zoom, button scale), scroll-triggered fade-in on section entry, and one-time load animations such as the stats counter. After changes, no element should be in constant motion on the page during normal browsing.",
       "files": [
-        "frontend/index.html",
-        "frontend/src/App.tsx",
-        "frontend/src/components/AnnouncementBar.tsx",
-        "frontend/src/components/ConsultationForm.tsx",
-        "frontend/src/components/Dentistry.tsx",
-        "frontend/src/components/Doctors.tsx",
-        "frontend/src/components/Footer.tsx",
         "frontend/src/components/Hero.tsx",
-        "frontend/src/components/Navbar.tsx",
         "frontend/src/components/Partners.tsx",
-        "frontend/src/components/Procedures.tsx",
-        "frontend/src/components/Services.tsx",
         "frontend/src/index.css"
       ],
       "components": [
@@ -27,7 +17,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-13"
+        "REQ-14"
       ],
       "confidence": "high"
     }

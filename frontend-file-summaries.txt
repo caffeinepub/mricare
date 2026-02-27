@@ -3,15 +3,15 @@
   "frontend/src/hooks/useQueries.ts": "React Query hooks for backend interactions, including a useSubmitConsultation mutation hook for the consultation form.",
   "frontend/src/components/AnnouncementBar.tsx": "Fixed top announcement bar with purple background showing free consultation text and a \"Book Now\" CTA link.",
   "frontend/src/components/Navbar.tsx": "Sticky navbar with MriCare+ logo, centered navigation links, search icon, Get Started button, and a mobile hamburger menu with smooth open/close transitions.",
-  "frontend/src/components/Hero.tsx": "Two-column hero section with badge, headline, CTA buttons, animated stats counters, hero image with floating badges, and fade-in animations.",
+  "frontend/src/components/Hero.tsx": "Two-column hero section with badge, headline, CTA buttons, one-time animated stats counters, and hero image with static floating badges — continuous animate-float/animate-float-delayed and animate-pulse classes removed.",
   "frontend/src/components/Procedures.tsx": "Three-card dental procedures section (Gum Surgery, Consultation, Tooth Extraction) with pastel backgrounds, circular images, pricing, and hover lift effects.",
   "frontend/src/components/Dentistry.tsx": "\"Modern Dentistry with a Gentle Touch\" section featuring two large feature cards with images and three smaller feature cards with Lucide icons.",
-  "frontend/src/components/Partners.tsx": "Horizontally auto-scrolling partner logos strip on a light purple background with grayscale-to-color hover effect.",
+  "frontend/src/components/Partners.tsx": "Static partner logos strip on a light purple background displayed in a flex-wrap grid with grayscale-to-color hover effect — the infinite auto-scrolling marquee animation has been removed.",
   "frontend/src/components/Services.tsx": "Responsive 3/2/1 column grid of six healthcare service cards with Lucide icons, titles, descriptions, and hover elevation effects.",
   "frontend/src/components/Doctors.tsx": "Four doctor cards with images, names, specializations, star ratings, and social media icon overlay on hover with lift animation.",
   "frontend/src/components/ConsultationForm.tsx": "Split-layout consultation booking section with a validated form (name, email, phone, service, message), success state, and a doctor image on the right.",
   "frontend/src/components/Footer.tsx": "Full footer with brand logo, description, social icons, quick links, services list, contact info, copyright line, and caffeine.ai attribution.",
-  "frontend/src/index.css": "Global styles with Poppins font import, OKLCH clinic design tokens, custom float and scroll animations, and Tailwind base/component/utility layers.",
+  "frontend/src/index.css": "Global styles with Poppins font import, OKLCH clinic design tokens, and Tailwind base/component/utility layers — all continuous looping animation keyframes (float, scroll-x) and their utility classes have been removed.",
   "frontend/tailwind.config.js": "Tailwind configuration with Poppins font family, full OKLCH color system, clinic-specific color tokens, and standard shadcn/ui theme extensions.",
   "frontend/index.html": "HTML entry point with Poppins Google Fonts preload, SEO meta tags, and Vite module script reference."
 }

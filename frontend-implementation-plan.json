@@ -1,98 +1,54 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Fix deployment error by removing Next.js dependencies",
+  "title": "Remove unnecessary continuous/looping animations site-wide",
   "requirements": [
     {
-      "id": "REQ-13",
-      "summary": "Audit and fix all compilation and build errors preventing successful deployment by replacing Next.js-specific constructs with standard React equivalents",
+      "id": "REQ-14",
+      "summary": "Remove all continuous/looping animations from the site, keeping only hover effects, scroll-triggered fade-ins, and one-time load animations like the stats counter",
       "acceptanceCriteria": [
-        "The Motoko backend actor compiles without errors",
-        "The frontend builds without TypeScript or module resolution errors",
-        "No Next.js-specific imports or APIs are used anywhere in the frontend",
-        "The application deploys successfully to the Internet Computer network",
-        "All existing features (announcement bar, navbar, hero, procedures, dentistry, partners, services, doctors, consultation form, footer) remain fully functional after the fix"
+        "The Partners section marquee no longer auto-scrolls continuously; partner logos are displayed statically or only animate on user interaction.",
+        "The floating circular element in the Hero section no longer rotates or pulses in a continuous loop.",
+        "No other section contains elements with infinite CSS animation loops or perpetual motion during idle browsing.",
+        "Hover animations (card lift, image zoom, button scale) still function correctly across all sections.",
+        "Scroll-triggered fade-in animations still trigger once when sections enter the viewport.",
+        "The stats counter animation in the Hero still plays once on load/scroll entry and does not loop."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/Partners.tsx",
           "operation": "modify",
-          "description": "Replace any Next.js Image component imports with standard img tags. Replace Next.js font imports with standard CSS font-face declarations or Google Fonts link in index.html. Ensure all generated image assets use correct paths: frontend/public/assets/generated/<filename>.dim_WIDTHxHEIGHT.png. Verify all sections (announcement bar, navbar, hero with generated/hero-dentist.dim_800x900.png, procedures, dentistry, partners, services with generated images, doctors with generated/doctor-*.dim_400x480.png, consultation form with generated/consultation-doctor.dim_600x700.png, footer) render correctly with standard React and img tags."
-        },
-        {
-          "path": "frontend/src/components/AnnouncementBar.tsx",
-          "operation": "modify",
-          "description": "Remove any Next.js-specific imports (next/link, next/image, next/font). Replace Next.js Link component with standard anchor tags or React Router Link if routing is needed. Ensure the component uses only React, TypeScript, and Tailwind CSS."
-        },
-        {
-          "path": "frontend/src/components/Navbar.tsx",
-          "operation": "modify",
-          "description": "Remove any Next.js-specific imports (next/link, next/image, next/font). Replace Next.js Link component with standard anchor tags with hash navigation for single-page scrolling (e.g., href='#services'). Replace Next.js Image component with standard img tags. Ensure mobile menu toggle and navigation work with standard React state and event handlers."
+          "description": "Remove the infinite horizontal auto-scrolling marquee animation from the partner brand names section. Display partner logos statically in a flex or grid layout without continuous motion. Ensure partner names remain visible and accessible without requiring animation."
         },
         {
           "path": "frontend/src/components/Hero.tsx",
           "operation": "modify",
-          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image component with standard img tag using src='assets/generated/hero-dentist.dim_800x900.png'. Ensure the hero section displays correctly with Tailwind CSS styling and standard React."
-        },
-        {
-          "path": "frontend/src/components/Procedures.tsx",
-          "operation": "modify",
-          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image components with standard img tags for procedure icons/images. Ensure all procedure cards render correctly with Tailwind CSS and standard React."
-        },
-        {
-          "path": "frontend/src/components/Dentistry.tsx",
-          "operation": "modify",
-          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image components with standard img tags using paths like assets/generated/dental-technology.dim_400x400.png and assets/generated/dentist-experienced.dim_400x400.png. Ensure the dentistry section displays correctly with standard React."
-        },
-        {
-          "path": "frontend/src/components/Partners.tsx",
-          "operation": "modify",
-          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image components with standard img tags for partner logos. Ensure the partners section renders correctly with Tailwind CSS and standard React."
-        },
-        {
-          "path": "frontend/src/components/Services.tsx",
-          "operation": "modify",
-          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image components with standard img tags using paths like assets/generated/gum-surgery.dim_300x300.png and assets/generated/tooth-extraction.dim_300x300.png. Ensure all service cards display correctly with standard React and Tailwind CSS."
-        },
-        {
-          "path": "frontend/src/components/Doctors.tsx",
-          "operation": "modify",
-          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image components with standard img tags using paths like assets/generated/doctor-1.dim_400x480.png, assets/generated/doctor-2.dim_400x480.png, assets/generated/doctor-3.dim_400x480.png, assets/generated/doctor-4.dim_400x480.png. Ensure the doctors section and all doctor cards render correctly with standard React."
-        },
-        {
-          "path": "frontend/src/components/ConsultationForm.tsx",
-          "operation": "modify",
-          "description": "Remove any Next.js-specific imports (next/image, next/font). Replace Next.js Image component with standard img tag using src='assets/generated/consultation-doctor.dim_600x700.png'. Ensure form submission, validation, and all form controls work correctly with standard React state and event handlers. Maintain any backend integration for form submission."
-        },
-        {
-          "path": "frontend/src/components/Footer.tsx",
-          "operation": "modify",
-          "description": "Remove any Next.js-specific imports (next/link, next/image, next/font). Replace Next.js Link components with standard anchor tags. Replace any Next.js Image components with standard img tags. Ensure the footer renders correctly with Tailwind CSS and standard React."
+          "description": "Remove any floating circular element with continuous rotation or pulse animations. Inspect for CSS keyframe animations or transform effects that create perpetual motion (e.g., rotate, pulse, float). Preserve the one-time animated fade-in, the count-up stats animation that plays once on visibility, and any hover effects. Ensure no element continuously animates during idle browsing."
         },
         {
           "path": "frontend/src/index.css",
           "operation": "modify",
-          "description": "If custom fonts were imported via Next.js font system, replace with standard CSS @font-face declarations or add Google Fonts link in index.html. Ensure all global styles remain intact and compatible with Tailwind CSS and standard React."
+          "description": "Remove or disable any global CSS keyframe animations that create infinite loops (e.g., @keyframes with animation-iteration-count: infinite for rotation, pulse, float, or similar effects). Preserve utility animations for fade-in, slide, and accordion that trigger once or on user interaction. Ensure no background elements or decorative shapes animate continuously."
         },
         {
-          "path": "frontend/index.html",
+          "path": "frontend/src/components/Services.tsx",
           "operation": "modify",
-          "description": "If custom fonts are needed, add Google Fonts link tags in the head section to replace Next.js font imports. Ensure the HTML template correctly references the Vite entry point and includes all necessary meta tags for the Internet Computer deployment."
+          "description": "Verify that service cards use only hover animations (lift, scale, shadow changes) and remove any continuous motion or looping animations if present. Ensure cards remain static during idle browsing."
         },
         {
-          "path": "frontend/package.json",
+          "path": "frontend/src/components/Procedures.tsx",
           "operation": "modify",
-          "description": "Remove any Next.js dependencies (next, next/image, next/font, etc.). Ensure all dependencies are compatible with Vite and the Internet Computer React stack. Verify build scripts reference Vite and not Next.js build commands."
+          "description": "Verify that procedure cards use only hover animations (lift, scale, image zoom) and remove any continuous motion or looping animations if present. Ensure cards remain static during idle browsing."
         },
         {
-          "path": "frontend/tsconfig.json",
+          "path": "frontend/src/components/Doctors.tsx",
           "operation": "modify",
-          "description": "Remove any Next.js-specific TypeScript configuration (paths for next/*, moduleResolution specific to Next.js). Ensure TypeScript configuration is compatible with Vite and standard React. Verify all path aliases and module resolution work correctly for the Internet Computer stack."
+          "description": "Verify that doctor cards use only hover animations (overlay, icon appearance) and remove any continuous motion or looping animations if present. Ensure cards remain static during idle browsing."
         },
         {
-          "path": "frontend/vite.config.ts",
+          "path": "frontend/src/components/Dentistry.tsx",
           "operation": "modify",
-          "description": "Ensure Vite configuration correctly handles asset paths for generated images in public/assets/generated/. Verify build output targets the correct directory for Internet Computer deployment. Ensure no Next.js-specific plugins or configurations remain."
+          "description": "Verify that image cards and icon cards use only hover animations (zoom, lift) and remove any continuous motion or looping animations if present. Ensure cards remain static during idle browsing."
         }
       ]
     }

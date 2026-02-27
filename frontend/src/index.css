@@ -102,27 +102,3 @@
     scroll-behavior: smooth;
   }
 }
-
-@layer utilities {
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  .animate-float-delayed {
-    animation: float 3s ease-in-out 1.5s infinite;
-  }
-
-  .animate-scroll-x {
-    animation: scroll-x 30s linear infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-8px); }
-  }
-
-  @keyframes scroll-x {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-}

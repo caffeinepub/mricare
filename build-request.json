@@ -1,40 +1,40 @@
 {
   "kind": "build_request",
-  "title": "Fix deployment error",
+  "title": "Remove unnecessary continuous/looping animations site-wide",
   "projectName": "MriCare+",
-  "priority": "high",
+  "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-13",
-      "text": "Audit and fix all compilation and build errors preventing successful deployment. Ensure the Motoko backend actor compiles without errors and the React/TypeScript frontend builds cleanly. Replace any Next.js-specific constructs (App Router, next/image, next/font, etc.) with standard React equivalents compatible with the Vite-based Internet Computer stack.",
-      "target": "both",
+      "id": "REQ-14",
+      "text": "Remove all unnecessary continuous/looping animations throughout the site. Specifically: stop the auto-scrolling marquee in the Partners section (remove or pause the infinite horizontal scroll), remove any floating element slow rotation or perpetual CSS keyframe animations in the Hero section, and eliminate any other elements that animate on a continuous loop without user interaction. Keep only meaningful animations: hover effects (card lift, image zoom, button scale), scroll-triggered fade-in on section entry, and one-time load animations such as the stats counter. After changes, no element should be in constant motion on the page during normal browsing.",
+      "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-1"
+          "msg-8"
         ],
         "quotes": [
-          "fix it"
+          "remove the inrelevent animation at is every place the things is conitinous moving"
         ]
       },
       "acceptanceCriteria": [
-        "The Motoko backend actor compiles without errors",
-        "The frontend builds without TypeScript or module resolution errors",
-        "No Next.js-specific imports or APIs are used anywhere in the frontend",
-        "The application deploys successfully to the Internet Computer network",
-        "All existing features (announcement bar, navbar, hero, procedures, dentistry, partners, services, doctors, consultation form, footer) remain fully functional after the fix"
+        "The Partners section marquee no longer auto-scrolls continuously; partner logos are displayed statically or only animate on user interaction.",
+        "The floating circular element in the Hero section no longer rotates or pulses in a continuous loop.",
+        "No other section contains elements with infinite CSS animation loops or perpetual motion during idle browsing.",
+        "Hover animations (card lift, image zoom, button scale) still function correctly across all sections.",
+        "Scroll-triggered fade-in animations still trigger once when sections enter the viewport.",
+        "The stats counter animation in the Hero still plays once on load/scroll entry and does not loop."
       ]
     }
   ],
   "constraints": [
-    "Do not remove or alter any existing feature functionality",
-    "All frontend code must use React with TypeScript and Tailwind CSS — no Next.js APIs",
-    "Backend must remain a single Motoko actor in backend/main.mo",
-    "Do not edit files under frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useActor.ts, frontend/src/main.tsx, or frontend/src/components/ui"
+    "Do not remove hover-triggered animations (card lift, image zoom, button scale).",
+    "Do not remove one-time scroll-triggered fade-in animations.",
+    "Do not remove the one-time stats counter animation in the Hero section."
   ],
   "nonGoals": [
-    "Adding new features or sections beyond what already exists",
-    "Changing the visual design or color scheme",
-    "Migrating to a different frontend framework"
+    "Redesigning any section layout or visual style.",
+    "Adding new animations.",
+    "Modifying backend logic."
   ],
   "imageRequirements": {
     "required": [],

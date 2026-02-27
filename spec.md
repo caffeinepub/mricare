@@ -1,12 +1,14 @@
 # Specification
 
 ## Summary
-**Goal:** Fix all compilation and build errors in the MriCare+ project so it deploys successfully to the Internet Computer network.
+**Goal:** Remove all continuous/looping animations site-wide so no element is in constant motion during normal browsing.
 
 **Planned changes:**
-- Audit and fix all Motoko backend compilation errors in `backend/main.mo`
-- Remove all Next.js-specific imports and constructs from the React/TypeScript frontend (e.g., `next/image`, `next/font`, App Router APIs)
-- Replace Next.js constructs with standard React/Vite-compatible equivalents
-- Resolve any TypeScript or module resolution errors in the frontend build
+- Stop the auto-scrolling marquee in the Partners section so partner logos display statically
+- Remove any infinite rotation, pulse, or perpetual CSS keyframe animations on the floating circular element in the Hero section
+- Eliminate any other elements across the site that animate in a continuous loop without user interaction
+- Preserve hover animations (card lift, image zoom, button scale)
+- Preserve scroll-triggered fade-in animations that play once on viewport entry
+- Preserve the one-time stats counter animation in the Hero section
 
-**User-visible outcome:** The application compiles and deploys successfully to the Internet Computer network with all existing features (announcement bar, navbar, hero, procedures, dentistry, partners, services, doctors, consultation form, footer) fully functional.
+**User-visible outcome:** The site has no constantly moving elements during idle browsing; only hover interactions and one-time scroll/load animations remain active.

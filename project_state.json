@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 7,
   "summary": "Premium dental clinic website (MriCare+) built with Next.js 15 (App Router), TypeScript, Tailwind CSS, Framer Motion, Lucide React, and React Hook Form. Soft purple healthcare theme with full landing page including announcement bar, sticky navbar, hero section, dental procedures, modern dentistry, partner logos, healthcare services grid, doctors section, consultation form, and footer.",
   "architectural_notes": [
     "Next.js 15 App Router with TypeScript; components in /app/components/",
@@ -108,6 +108,14 @@
         "REQ-13"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-remove-all-unnecessary-continuous-looping-animations-throughout-the-site-specifically-stop-the-auto-scrolling-marquee-in-the-partners-section-remove-or-pause-the-infinite-horizontal-scroll-remove-any-floating-element-slow-rotation-or-perpetual-css-keyframe-animations-in-the-hero-section-and-eliminate-any-other-elements-that-animate-on-a-continuous-loop-without-user-interaction-keep-only-meaningful-animations-hover-effects-card-lift-image-zoom-button-scale-scroll-triggered-fade-in-on-section-entry-and-one-time-load-animations-such-as-the-stats-counter-after-changes-no-element-should-be-in-constant-motion-on-the-page-during-normal-browsing",
+      "title": "Remove all unnecessary continuous/looping animations throughout the site. Specifically: stop the auto-scrolling marquee in the Partners section (remove or pause the infinite horizontal scroll), remove any floating element slow rotation or perpetual CSS keyframe animations in the Hero section, and eliminate any other elements that animate on a continuous loop without user interaction. Keep only meaningful animations: hover effects (card lift, image zoom, button scale), scroll-triggered fade-in on section entry, and one-time load animations such as the stats counter. After changes, no element should be in constant motion on the page during normal browsing.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -177,6 +185,12 @@
       "reqIds": [
         "REQ-12"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Remove unnecessary continuous/looping animations throughout the site; keep only meaningful hover and scroll-triggered animations",
+      "reqIds": [],
       "status": "pending"
     }
   ],

@@ -42,7 +42,7 @@ export default function Hero() {
           }`}
         >
           <span className="inline-flex items-center gap-2 bg-clinic-light text-clinic-purple text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
-            <span className="w-2 h-2 rounded-full bg-clinic-purple animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-clinic-purple" />
             Advanced Dental Care
           </span>
 
@@ -106,8 +106,8 @@ export default function Hero() {
               className="relative z-10 w-full rounded-3xl shadow-2xl object-cover"
             />
 
-            {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 z-20 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-3 animate-float">
+            {/* Static badge */}
+            <div className="absolute -bottom-4 -left-4 z-20 bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-clinic-light flex items-center justify-center text-clinic-purple font-bold text-lg">
                 ✓
               </div>
@@ -117,8 +117,8 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* Floating rating */}
-            <div className="absolute -top-4 -right-4 z-20 bg-white rounded-2xl shadow-lg px-4 py-3 text-center animate-float-delayed">
+            {/* Static rating */}
+            <div className="absolute -top-4 -right-4 z-20 bg-white rounded-2xl shadow-lg px-4 py-3 text-center">
               <p className="text-2xl font-extrabold text-clinic-purple">4.9★</p>
               <p className="text-xs text-clinic-gray">Patient Rating</p>
             </div>
